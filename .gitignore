@@ -1,0 +1,47 @@
+public class No {
+	public int info;
+	public No sae, sad;
+	public No(int info, No sae, No sad) {
+		super();
+		this.info= info;
+		this.sae = sae;
+		this.sad = sad;
+	}
+	
+	
+  
+  public class Avore {
+	public No raiz;
+
+	public Avore(No raiz) {
+		super();
+		this.raiz = raiz;
+	}
+
+	public void incluir(No no, int info) {
+		if(info > no.info){
+			if(no.sae == null){
+				no.sae =new  No(info,null,null);
+			}
+		}else {
+			if(no.sae == null){
+				no.sae = new No(info,null,null);
+			}else{
+				incluir(no.sae,info);
+			}
+		}
+
+	}
+	public void consultar(No no , int info){
+		
+	}
+
+
+
+
+public class Meain {
+
+	public static void main(String[] args) {
+		Avore avore = new Avore(new No(5, null, null));
+		avore.incluir(avore.raiz,9);
+		System.out.println();
